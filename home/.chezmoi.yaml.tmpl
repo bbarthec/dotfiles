@@ -1,0 +1,10 @@
+data:
+  personalEmail: {{ promptString "personal email" | quote }}
+  workEmail: {{ promptString "work email" | quote }}
+  name: {{ promptString "name" | quote }}
+  surname: {{ promptString "surname" | quote }}
+  hostname: {{ promptString "hostname" | quote }}
+
+edit:
+  command: code
+  minDuration: 0

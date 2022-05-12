@@ -1,0 +1,11 @@
+# https://www.chezmoi.io/reference/special-files-and-directories/chezmoiignore/
+
+# If a file called .chezmoiignore exists in the source state then it is interpreted as a set of patterns to ignore.
+# Patterns can be excluded by prefixing them with a ! character. All excludes take priority over all includes.
+
+# Comments are introduced with the # character and run until the end of the line.
+# .chezmoiignore is interpreted as a template. This allows different files to be ignored on different machines.
+# .chezmoiignore files in subdirectories apply only to that subdirectory.
+
+# ~/.local/share/chezmoi/.chezmoiignore
+
