@@ -1,4 +1,13 @@
-# -*-mode:ruby-*- vim:ft=ruby
+#!/bin/bash
+
+# I do not use `Brewfile`, but istead I construct it dynamically here.
+# It's like this, because `chezmoi` scripts keep tracks of changes in
+# the scripting file and not in the `Brewfile`.
+# @see https://github.com/twpayne/chezmoi/issues/401
+
+set -eufo pipefail
+
+brew bundle --file=/dev/stdin <<EOF
 
 # Taps
 
@@ -56,3 +65,5 @@ mas "Harvest", id: 506189836
 mas "Microsoft To Do", id: 1274495053
 mas "OneDrive", id: 823766827
 mas "Xcode", id: 497799835
+
+EOF
