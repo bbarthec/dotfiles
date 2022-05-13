@@ -11,10 +11,11 @@ if ! command -v brew &> /dev/null; then
   echo "Homebrew is not available on path. Trying to locate it..."
 {{ if eq .computer_architecture "arm64" -}}
   alias brew=/opt/homebrew/bin/brew
+  echo "Aliased brew to /opt/homebrew/bin/brew"
 {{- else if eq .computer_architecture "x86_64" -}}
   alias brew=/usr/local/bin/brew
-{{ end }}
-  echo "Aliased brew to: $brew"
+  echo "Aliased brew to /usr/local/bin/brew"
+{{ end }}"
   if ! command -v brew &> /dev/null; then
     echo "Homebrew is not installed propoerly. Exiting..."
     exit 1
