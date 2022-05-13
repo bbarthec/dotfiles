@@ -7,6 +7,9 @@
 
 set -eufo pipefail
 
+# if brew is not recognized, try to load it from .zprofile
+if ! command -v brew &> /dev/null; then eval ../dot_zprofile; fi
+
 brew bundle --file=/dev/stdin <<EOF
 
 # Taps
