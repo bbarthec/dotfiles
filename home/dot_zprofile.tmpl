@@ -1,6 +1,5 @@
-{{- if eq .computer_architecture "x86_64" -}} # Intel MacBook
-eval "$(/usr/local/bin/brew shellenv)"
-{{- else if eq .computer_architecture "arm64" -}} # Apple Silicon MacBook
-eval "$(/opt/homebrew/bin/brew shellenv)"
-{{- end -}}
-
+{{- if eq .computer_architecture "x86_64" -}}
+eval "$(/usr/local/bin/brew shellenv)" # Intel MacBook
+{{- else if eq .computer_architecture "arm64" -}}
+eval "$(/opt/homebrew/bin/brew shellenv)" # Apple Silicon MacBook
+{{- end }}
