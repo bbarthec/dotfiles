@@ -1,6 +1,0 @@
-computerArch=$(uname -m)
-if [ "$computerArch" == "x86_64" ]; then # Intel MacBook
-eval "$(/usr/local/bin/brew shellenv)"
-elif [ "$computerArch" == "arm64" ]; then # Apple Silicon MacBook
-eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
