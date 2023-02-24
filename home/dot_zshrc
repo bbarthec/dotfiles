@@ -108,5 +108,6 @@ source "$HOME/.zsh/history.zsh"
 source "$HOME/.zsh/stack.zsh"
 
 eval "$(direnv hook zsh)"
+eval "$(nodenv init -)"
 eval "$(rbenv init - zsh)"
 eval "$(pyenv init -)"
