@@ -28,46 +28,59 @@ cask "font-fira-code"
 # Development
 
 brew "bash"
+brew "cmake"
 brew "chezmoi"
+brew "cocoapods"
 brew "direnv"
-brew "git"
 brew "git-crypt"
 brew "git-lfs"
+brew "git"
 brew "gnupg"
 brew "htop"
 brew "mas"
-brew "node"
-brew "python@3.10"
+brew "ninja"
+brew "nodenv"
+brew "openjdk@11"
+brew "pyenv"
 brew "ruby@2.7"
 brew "scrcpy"
 brew "shellcheck"
-brew "swiftlint"
 brew "tree"
 brew "watchman"
 brew "zsh"
-cask "adoptopenjdk11"
+cask "android-platform-tools"
 cask "android-sdk"
 cask "android-studio"
+cask "flipper"
+cask "google-cloud-sdk"
 cask "iterm2"
 cask "visual-studio-code"
+cask "mongodb-compass"
 
 # Apps
 
 cask "discord"
-cask "Google Chrome"
-cask "Microsft Edge"
-cask "Microsoft Excel"
-cask "Microsoft Outlook"
-cask "Microsoft Word"
+cask "google-chrome"
+cask "microsoft-edge"
+cask "microsoft-excel"
+cask "microsoft-outlook"
+cask "microsoft-word"
 cask "rectangle"
+cask "raycast"
 cask "Slack"
 cask "Spotify"
+cask "zoom"
 
 # Mac App Store
 
+mas "Amphetamine", id: 937984704
 mas "Harvest", id: 506189836
 mas "Microsoft To Do", id: 1274495053
 mas "OneDrive", id: 823766827
 mas "Xcode", id: 497799835
+
+# Other that require some other installed beforehand
+
+brew "swiftlint" # requires Xcode
 
 EOF
