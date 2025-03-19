@@ -1,8 +1,35 @@
-## Installation
+<h1 align="center">
+  macOS dotfiles
+  <br/>
+  <br/>
+  <sup>
+  <sup>
+    powered by
+    <a href="https://www.chezmoi.io/">chezmoi</a>
+  </sub>
+  </sub>
+</h1>
 
-```
-./install.sh
-```
+React Native environment configuration for macOS used to configure a fresh macOS device. All managed by [chezmoi](https://github.com/twpayne/chezmoi).
+
+
+## Repository goals ⚽️
+
+- [x] use defaults as much as possible and describe any tweak
+- [x] machine setup as a code
+- [x] seamless one-command machine setup
+- [x] React Native friendly environment
+- [x] reflecting all the software & configurations I'm using on a daily basis
+
+## Installation & how to use
+
+With a new macOS machine:
+1. run the computer and reach the desktop stage (provide all info needed - keyboard, timezone, user (alongside with password), network connection info)
+2. open `terminal` app
+3. run the command [officially recommended in the chezmoi docs](https://www.chezmoi.io/):
+    ```bash
+    sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply bbarthec
+    ```
 
 ## INSPIRATIONS
 
@@ -34,16 +61,16 @@
   - [ ] change Terminator to iTerm2
     - [ ] enable status bar - CPU, working dir, git branch, command
       - [ ] position status bar to the bottom
-  - [ ] change Safari to Microsoft Edge 
+  - [ ] change Safari to Microsoft Edge
   - [ ] adjust status bar
     - add volume icon
 - Dock:
   - [ ] move to the left
   - [ ] adjust size
-Peripherals:
+        Peripherals:
   - [ ] pair Sony headphones
   - [ ] install DellDisplayManager
-Other:
+        Other:
   - [ ] clone recent repositories
   - [ ] sudo xcodebuild -license accept
   - [ ] configure Rectangle
@@ -80,28 +107,28 @@ Other:
   - configure Raycast
 
 Login:
-  - [ ] Spotify
-  - [ ] Microsoft Edge
-  - [ ] Harvest
-  - [ ] Visual Studio Code
-Apps:
-  - 1Password
-  - Accelerate (extension for Safari)
-  - Adobe Bridge
-  - Amphetamine
-  - DaVinci Resolve
-  - DDM > DellDisplayManager
-  - Discord
-  - Fig
-  - Figma
-  - Flow
-  - MenuMeters
-  - OmniDiskSweeper
-  - Raycast
-  - VLC
-  - Wormhole
-  - Vysor
-  - Lets' View
-  - Amphetamine
-  - wireshark - downloaded from website and installed manually
 
+- [ ] Spotify
+- [ ] Microsoft Edge
+- [ ] Harvest
+- [ ] Visual Studio Code
+      Apps:
+- 1Password
+- Accelerate (extension for Safari)
+- Adobe Bridge
+- Amphetamine
+- DaVinci Resolve
+- DDM > DellDisplayManager
+- Discord
+- Fig
+- Figma
+- Flow
+- MenuMeters
+- OmniDiskSweeper
+- Raycast
+- VLC
+- Wormhole
+- Vysor
+- Lets' View
+- Amphetamine
+- wireshark - downloaded from website and installed manually
