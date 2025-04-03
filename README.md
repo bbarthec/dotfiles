@@ -30,6 +30,9 @@ With a new macOS machine:
     ```bash
     sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply bbarthec
     ```
+4. you'll be prompted by `xcode-select` that `no developer tools were found, requesting install`
+   1. proceed accordingly - it will install basic macOS dev tools like `git`
+5. re-run the above command
 
 ## INSPIRATIONS
 

@@ -1,15 +1,16 @@
 #!/bin/bash
 
-# I do not use `Brewfile`, but istead I construct it dynamically here.
-# It's like this, because `chezmoi` scripts keep tracks of changes in
-# the scripting file and not in the `Brewfile`.
+# NOTICE
+# @see https://www.chezmoi.io/user-guide/machines/macos/#use-brew-bundle-to-manage-your-brews-and-casks
 # @see https://github.com/twpayne/chezmoi/issues/401
+#
+# I want to manage my brews and casts using `brew bundle` command (via `Brewfile`).
+# I construct `Brewfile` dynamically in this script and execute it.
+# It is done that way, because `chezmoi` executes this script every time it content is changed.
+#
+# TODO: looking for better ideas to solve this issue
 
 set -eufo pipefail
-
-# if ! command -v brew &> /dev/null; then
-#   echo "Homebrew is not available. Exiting"
-# fi
 
 brew bundle --file=/dev/stdin <<EOF
 
