@@ -14,14 +14,6 @@ set -eufo pipefail
 
 brew bundle --file=/dev/stdin <<EOF
 
-# Taps
-
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/core"
-tap "homebrew/cask-fonts"
-tap "adoptopenjdk/openjdk"
-
 # Fonts
 
 cask "font-fira-code"
@@ -29,45 +21,35 @@ cask "font-fira-code"
 # Development
 
 brew "bash"
-brew "cmake"
 brew "chezmoi"
+brew "cmake"
 brew "cocoapods"
 brew "direnv"
-brew "git-crypt"
 brew "git-lfs"
 brew "git"
-brew "gnupg"
-brew "htop"
 brew "mas"
-brew "ninja"
 brew "nodenv"
-brew "openjdk@11"
 brew "pyenv"
-brew "ruby@2.7"
+brew "rbenv"
 brew "scrcpy"
-brew "shellcheck"
 brew "tree"
 brew "watchman"
 brew "zsh"
-cask "android-platform-tools"
-cask "android-sdk"
+
 cask "android-studio"
-cask "flipper"
-cask "google-cloud-sdk"
+cask "cursor"
+cask "expo-orbit"
 cask "iterm2"
-cask "visual-studio-code"
-cask "mongodb-compass"
 
 # Apps
 
 cask "discord"
-cask "google-chrome"
-cask "microsoft-edge"
+cask "firefox"
 cask "microsoft-excel"
 cask "microsoft-outlook"
 cask "microsoft-word"
-cask "rectangle"
 cask "raycast"
+cask "rectangle"
 cask "Slack"
 cask "Spotify"
 cask "zoom"
@@ -79,9 +61,5 @@ mas "Harvest", id: 506189836
 mas "Microsoft To Do", id: 1274495053
 mas "OneDrive", id: 823766827
 mas "Xcode", id: 497799835
-
-# Other that require some other installed beforehand
-
-brew "swiftlint" # requires Xcode
 
 EOF
