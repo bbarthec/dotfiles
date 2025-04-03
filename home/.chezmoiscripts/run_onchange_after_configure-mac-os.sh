@@ -3,7 +3,55 @@
 set -eufo pipefail
 
 # Close any open System Preferences panes, to prevent them from overriding settings we’re about to change
+echo "Configuring macOS settings..."
+echo "✓ Closing System Preferences"
 osascript -e 'tell application "System Preferences" to quit'
+
+# Set Firefox as the default browser using PlistBuddy
+echo "✓ Setting Firefox as the default browser"
+FIREFOX_BUNDLE_ID="org.mozilla.firefox"
+defaults write com.apple.LaunchServices/com.apple.launchservices.secure LSHandlers -array-add '{LSHandlerRoleAll=org.mozilla.firefox;LSHandlerURLScheme=http;}'
+defaults write com.apple.LaunchServices/com.apple.launchservices.secure LSHandlers -array-add '{LSHandlerRoleAll=org.mozilla.firefox;LSHandlerURLScheme=https;}'
+# Set system appearance to dark
+echo "✓ Setting system appearance to dark"
+defaults write NSGlobalDomain AppleInterfaceStyle Dark
+
+# Configure dock settings
+echo "✓ Configuring dock settings"
+defaults write com.apple.dock orientation left
+defaults write com.apple.dock tilesize -int 48
+defaults write com.apple.dock magnification -bool false
+defaults write com.apple.dock show-recents -bool false
+defaults write com.apple.dock autohide -bool false
+
+# Remove all default apps from Dock
+echo "✓ Removing default apps from Dock"
+defaults write com.apple.dock persistent-apps -array
+
+# Add preferred apps to Dock
+echo "✓ Adding preferred apps to Dock"
+for app in \
+    "/System/Applications/Finder.app" \
+    "/Applications/Firefox.app" \
+    "/Applications/Cursor.app"; do
+    if [ -d "$app" ]; then
+        defaults write com.apple.dock persistent-apps -array-add "<dict>
+            <key>tile-data</key>
+            <dict>
+                <key>file-data</key>
+                <dict>
+                    <key>_CFURLString</key>
+                    <string>$app</string>
+                    <key>_CFURLStringType</key>
+                    <integer>0</integer>
+                </dict>
+            </dict>
+        </dict>"
+    fi
+done
+
+echo "✓ Dock configuration complete"
+
 
 # # https://github.com/mathiasbynens/dotfiles/blob/main/.macos
 
@@ -610,33 +658,14 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 # # Allow the App Store to reboot machine on macOS updates
 # defaults write com.apple.commerce AutoUpdateRestartRequired -bool true
 
+# Restart the Launch Services to apply changes
+echo "✓ Restarting Launch Services"
+/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
 
-# ###############################################################################
-# # Kill affected applications                                                  #
-# ###############################################################################
-
-# for app in "Activity Monitor" \
-# 	"Address Book" \
-# 	"Calendar" \
-# 	"cfprefsd" \
-# 	"Contacts" \
-# 	"Dock" \
-# 	"Finder" \
-# 	"Google Chrome Canary" \
-# 	"Google Chrome" \
-# 	"Mail" \
-# 	"Messages" \
-# 	"Opera" \
-# 	"Photos" \
-# 	"Safari" \
-# 	"SizeUp" \
-# 	"Spectacle" \
-# 	"SystemUIServer" \
-# 	"Terminal" \
-# 	"Transmission" \
-# 	"Tweetbot" \
-# 	"Twitter" \
-# 	"iCal"; do
-# 	killall "${app}" &> /dev/null
-# done
-# echo "Done. Note that some of these changes require a logout/restart to take effect."
+echo "✓ Killing affected applications"
+for app in "Dock" \
+	"Finder";
+    do
+	killall "${app}" &> /dev/null
+done
+echo "✓ Done"
