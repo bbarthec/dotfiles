@@ -34,6 +34,14 @@ With a new macOS machine:
    1. proceed accordingly - it will install basic macOS dev tools like `git`
 5. re-run the above command
 
+## TODOs
+
+- [ ] during first installation you'll be given an error that `brew` cannot been found. You need to run `exec -l $SHELL` to re-initialize shell and load updated `PATH` env variable. Then re-run the chezmoi script and `brew` will be found correctly.
+- [ ] when installing `Microsoft` apps you'll be prompted about the password
+- [ ] when installing `Microsoft` apps there'll be `Microsoft AutoUpdate` modal. Deal with it somehow.
+- [ ] need to login to Apple account when installing App Store apps
+- [ ] execute `sudo xcodebuild -license accept`
+
 ## INSPIRATIONS
 
 - [@twoayne/dotfiles](https://github.com/twpayne/dotfiles) - starting point for writing my own dotfiles repo
