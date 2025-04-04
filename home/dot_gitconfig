@@ -1,0 +1,8 @@
+[user]
+	name = Bartłomiej Bukowski
+	email = bartlomiej.bukowski@swmansion.com
+[push]
+	autoSetupRemote = true
+
+[alias]
+	logpretty = log --color --pretty=format:'%C(yellow)%h%Creset %C(blue)%<(12)%ar%Creset %C(cyan)%<(20)%an%Creset %C(white)%s%Creset %C(red)%d%Creset' --date=format:'%Y-%m-%d %H:%M:%S'
