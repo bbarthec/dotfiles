@@ -42,6 +42,7 @@ With a new macOS machine:
 - [ ] need to login to Apple account when installing App Store apps
 - [ ] execute `sudo xcodebuild -license accept`
 - [ ] find a way to port over `EasyRes` app to the new machines as it's no longer available
+- [ ] for android tooling follow the [React Native guide](https://reactnative.dev/docs/set-up-your-environment?platform=android)
 
 ## INSPIRATIONS
 
